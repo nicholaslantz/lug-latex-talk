@@ -1,6 +1,8 @@
 \documentclass[xetex,mathserif,serif]{beamer}
 
 \usepackage{beamerthemesplit}
+\usepackage{amsmath}
+\usepackage{lmodern}
 \usetheme{Rochester}
 \usecolortheme{lily}
 
@@ -10,6 +12,7 @@
 
 \title{Pragmatic \LaTeX}
 \author{Nicholas Lantz}
+\institute{CSM Linux User's Group}
 \date{October 20, 2016}
 
 \begin{document}
@@ -77,13 +80,13 @@
         % Package includes here
         \usepackage[margin=1in]{geometry}
 
-        % File metadata here
+        % Header info here
         \title{Example}
         \author{Nicholas Lantz}
         \date{\today} % Outputs today's date
 
         \begin{document}
-        \maketitle % Creates title based on metadata
+        \maketitle % Creates title based on header info
         % Document goes here....
         \end{document}
     \end{minted}
@@ -106,8 +109,10 @@
                 \item
                     \textbackslash{}\textbackslash{}
             \end{enumerate}
+        \item
             Generally, use the two newlines, looks better.
 
+        \item
             However, the two wacks can look better inside of the author
             declaration at the top of the document, or in tables (discussed
             later).
@@ -216,9 +221,153 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Lists}
+    \framesubtitle{Writing \LaTeX}
 
+    \begin{description}
+        \item[Ordered] \textbackslash{}begin\{enumerate\}
+        \item[Unordered] \textbackslash{}begin\{itemize\}
+        \item[Description] \textbackslash{}begin\{description\}
+    \end{description}
+
+    \begin{itemize}
+        \item Use \textbackslash{}item to create  new item in the list
+        \item
+            For descriptions, add the description in [] after the
+            \textbackslash{}item
+    \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{Example of Lists}
+    \framesubtitle{Writing \LaTeX}
 
+    \begin{minted}{Latex}
+        \begin{enumerate}
+            \item Item 1
+            \item Item 2
+            \item Item 3
+                \begin{enumerate}
+                    \item
+                        These can be nested!
+                \end{enumerate}
+            \item Item 4
+        \end{enumerate}
 
+        \begin{description}
+            \item[My Description] Informative Text
+        \end{description}
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Environments}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{itemize}
+        \item
+            Different pieces of the document are placed in different
+            \textit{environments}
+        \item
+            The lists above each began an environment which causes \LaTeX{} to
+            handle commands differently.
+        \item
+            Everything in the document is placed in the document environment
+            \begin{itemize}
+                \item That's why it begins with \textbackslash{}begin\{document\}
+            \end{itemize}
+        \item
+            Use \textbackslash{}begin\{\} to open an environment and
+            \textbackslash{}end\{\} to close it.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Math}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{itemize}
+        \item
+            Math has its own special environment in \LaTeX{}.
+        \item
+            For the most part, it behaves like normal
+            \begin{itemize}
+                \item
+                    Except, there are different functions than normal text
+                \item
+                    And the typesetting system is different for math
+            \end{itemize}
+        \item
+            Two ways to write math:
+            \begin{enumerate}
+                \item
+                    Inline: Use \textbackslash{}(\textbackslash)
+                \item
+                    Displayed: Use \textbackslash{}[{}\textbackslash{}]
+            \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Gabriel's Horn}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{minted}{Latex}
+        \begin{displaymath}
+            \int_{1}^{\infty} \frac{\pi{}dy}{y^2}
+        \end{displaymath}
+    \end{minted}
+
+    \bigskip
+
+    \begin{displaymath}
+        \int_{1}^{\infty}
+        \frac{\pi{}}{y^2}dy
+    \end{displaymath}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Nested Fractions}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{minted}{Latex}
+        \[\frac{\frac{1}{x} \cdot \frac{y}{2}}{(x+y)^2}\]
+    \end{minted}
+
+    \bigskip
+
+    \[
+        \frac{\frac{1}{x} \cdot \frac{y}{2}}{(x+y)^2}
+    \]
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Boolean Equations and Logic}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{minted}{Latex}
+        \[\neg (P \wedge Q) = (\neg P) \vee (\neg Q)\]
+        \[\neg (P \vee Q) = (\neg P) \wedge (\neg Q)\]
+    \end{minted}
+
+    \bigskip
+
+    \[\neg (P \wedge Q) = (\neg P) \vee (\neg Q)\]
+    \[\neg (P \vee Q) = (\neg P) \wedge (\neg Q)\]
+\end{frame}
+
+\begin{frame}[fragile]
+    You can also embed math in text\ldots
+
+    \bigskip
+
+    \begin{minted}{Latex}
+        Let \(x=1\) and \(y=2\). As \(t \to \infty\),
+        \(z\) goes to \(0\).
+    \end{minted}
+
+    \bigskip
+
+    Let \(x=1\) and \(y=2\). As \(t \to \infty\), \(z\) goes to \(0\).
+\end{frame}
 \end{document}
