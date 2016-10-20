@@ -30,7 +30,7 @@
 
 \begin{frame}
     \frametitle{Ligatures}
-    \framesubtitle{\LaTeX Vs. Word}
+    \framesubtitle{\LaTeX{} Vs. Word}
 
     \begin{itemize}
         \item
@@ -46,7 +46,7 @@
 
 \begin{frame}
     \frametitle{Typesetting Math}
-    \framesubtitle{\LaTeX Vs. Word}
+    \framesubtitle{\LaTeX{} Vs. Word}
 
     \begin{itemize}
         \item
@@ -55,6 +55,8 @@
         \item
             \LaTeX supports these very nicely, and the output looks much better
             than the Word equivalent.
+        \item
+            We will discuss how to typeset mathematics later.
     \end{itemize}
 
     \centering
@@ -65,6 +67,158 @@
         x^2\right)}^{3/2}} (a \sin \theta \,\hat\jmath) = 0
     \end{displaymath}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Structure of \LaTeX{} Document}
+
+    \begin{minted}{Latex}
+        \documentclass[letterpaper]{article}
+
+        % Package includes here
+        \usepackage[margin=1in]{geometry}
+
+        % File metadata here
+        \title{Example}
+        \author{Nicholas Lantz}
+        \date{\today} % Outputs today's date
+
+        \begin{document}
+        \maketitle % Creates title based on metadata
+        % Document goes here....
+        \end{document}
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Paragraphs}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{itemize}
+        \item
+            \LaTeX{} considers all spaces between words equally, so adding
+            extra spaces between words will not increase the spacing in the
+            document.
+        \item
+            Two ways to create a new paragraph in \LaTeX{}
+            \begin{enumerate}
+                \item
+                    Two newlines (\textbackslash{}n)
+                \item
+                    \textbackslash{}\textbackslash{}
+            \end{enumerate}
+            Generally, use the two newlines, looks better.
+
+            However, the two wacks can look better inside of the author
+            declaration at the top of the document, or in tables (discussed
+            later).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Sections}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{minted}{Latex}
+        \section{Top-level Section}
+        \subsection{Sub-section}
+        \section{Yet Another Section}
+    \end{minted}
+
+    There are other kinds of sections, like
+    \begin{itemize}
+        \item
+            part
+        \item
+            chapter
+        \item
+            section
+        \item
+            subsection
+        \item
+            subsubsection
+        \item
+            paragraph
+        \item
+            subparagraph
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Document Classes}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{itemize}
+        \item
+            Remember the \textbackslash{}documentclass\{article\}?
+        \item
+            ``article'' is the most common document class I use. Used for
+            short documents
+        \item
+            ``Report'' has access to the ``chapter'' section dicussed in the
+            last slide
+        \item
+            ``book'' has access to the ``part'' section
+        \item
+            Generally, the document class will change the basic structure of
+            your document and the style of headings, but it will not change
+            much.
+        \item
+            Generally, use ``article'' for short documents and ``report'' for
+            long ones.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Common Packages}
+    \framesubtitle{Writing \LaTeX}
+
+    \begin{minted}{Latex}
+        \usepackage[margin=1in]{geometry}
+        % Used to adjust margins
+        \usepackage{verbatim}
+        % adds "comment" environment for long comments
+        % Allows the displaying of text "verbatim" that the LaTeX processor
+        % will not process
+        \usepackage{amsmath}
+        % Allows expanded math features
+        \usepackage{times}
+        % Uses Times New Roman font for LAIS classes
+        \usepackage{setspace}
+        % Easy double spacing between lines in paragraphs
+        \usepackage{graphicx}
+        % Includes images (discussed later)
+    \end{minted}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \Large Any other \textit{common} packages I missed?
+\end{frame}
+
+\begin{frame}
+    \frametitle{Text Styles/Fonts}
+    \framesubtitle{Writing \LaTeX}
+
+    For all of the below commands, just use the control word and then place
+    the text you want to appear inside of the \{\}.
+
+    \bigskip
+
+    \centering
+    \begin{tabular}{c|c}
+        \textbf{Bold Face} & \textbackslash{}textbf\{\} \\
+        \textit{Italics}   & \textbackslash{}textit\{\} \\
+        \emph{Emphasized}  & \textbackslash{}emph\{\} \\ % consider removing
+        \textrm{Roman Text} & \textbackslash{}rmfamily\{\} \\
+        \textsf{Sans Serif Text} & \textbackslash{}textsf\{\} \\
+        \texttt{Monospace Text} & \textbackslash{}texttt\{\} \\
+    \end{tabular}
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
 
 
 \end{document}
