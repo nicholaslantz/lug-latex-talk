@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xelatex 2016.8.22)  20 OCT 2016 18:06
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xelatex 2016.8.22)  21 OCT 2016 10:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1179,7 +1179,7 @@ ash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlett
 er\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
 
  (./ppt.mintedmd5)
-(./_minted-ppt/9ae00d835d54aedd73c8a7f385f574b0be2d1de8.pygtex)) [16
+(./_minted-ppt/b9ff4f6564407f471bfddf87e05f96358036bed8.pygtex)) [16
 
 ]
 \openout4 = `ppt.vrb'.
@@ -1199,7 +1199,18 @@ ash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlett
 er\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
 
  (./ppt.mintedmd5)
-(./_minted-ppt/4ec8f83bd9370bcdc9c5475ab65567b8891ab10b.pygtex)) [17
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"ppt.pyg\")), \"r\", encodin
+g=\"UTF8\"); t = f.read(); f.close(); f = open(os.path.expanduser(os.path.expan
+dvars(\"ppt.pyg\")), \"w\", encoding=\"UTF8\"); f.write(textwrap.dedent(t)); f.
+close();")...executed.
+
+runsystem(pygmentize -l Latex -f latex -P commandprefix=PYG -F tokenmerge -P ma
+thescape=True -o _minted-ppt/b25fb875a673ce2a122781a1a29ac5bbea5cb145.pygtex pp
+t.pyg)...executed.
+
+
+(./_minted-ppt/b25fb875a673ce2a122781a1a29ac5bbea5cb145.pygtex)) [17
 
 ]
 \openout4 = `ppt.vrb'.
@@ -1219,7 +1230,7 @@ ash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlett
 er\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
 
  (./ppt.mintedmd5)
-(./_minted-ppt/58d161f5e2d1a2d17a136ee76a6d8028200be8ad.pygtex)) [18
+(./_minted-ppt/4ec8f83bd9370bcdc9c5475ab65567b8891ab10b.pygtex)) [18
 
 ]
 \openout4 = `ppt.vrb'.
@@ -1239,7 +1250,7 @@ ash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlett
 er\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
 
  (./ppt.mintedmd5)
-(./_minted-ppt/b9ff4f6564407f471bfddf87e05f96358036bed8.pygtex)) [19
+(./_minted-ppt/58d161f5e2d1a2d17a136ee76a6d8028200be8ad.pygtex)) [19
 
 ]
 \openout4 = `ppt.vrb'.
@@ -1273,7 +1284,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 385.
 Here is how much of TeX's memory you used:
  22713 strings out of 493589
  415365 string characters out of 6148800
- 516463 words of memory out of 5000000
+ 515939 words of memory out of 5000000
  25541 multiletter control sequences out of 15000+600000
  66935 words of font info for 71 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191

@@ -107,7 +107,7 @@
                 \item
                     Two newlines (\textbackslash{}n)
                 \item
-                    \textbackslash{}\textbackslash{}
+                    \textbackslash{}par
             \end{enumerate}
         \item
             Generally, use the two newlines, looks better.
@@ -214,9 +214,9 @@
         \textbf{Bold Face} & \textbackslash{}textbf\{\} \\
         \textit{Italics}   & \textbackslash{}textit\{\} \\
         \emph{Emphasized}  & \textbackslash{}emph\{\} \\ % consider removing
-        \textrm{Roman Text} & \textbackslash{}rmfamily\{\} \\
+        \textrm{Roman Text} & \textbackslash{}textrm\{\} \\
         \textsf{Sans Serif Text} & \textbackslash{}textsf\{\} \\
-        \texttt{Monospace Text} & \textbackslash{}texttt\{\} \\
+        \texttt{Monospace Text} & \textbackslash{}texttt\{\}
     \end{tabular}
 \end{frame}
 
@@ -309,12 +309,27 @@
 \end{frame}
 
 \begin{frame}[fragile]
+    You can also embed math in text\ldots
+
+    \bigskip
+
+    \begin{minted}{Latex}
+        Let \(x=1\) and \(y=2\). As \(t \to \infty\),
+        \(z\) goes to \(0\).
+    \end{minted}
+
+    \bigskip
+
+    Let \(x=1\) and \(y=2\). As \(t \to \infty\), \(z\) goes to \(0\).
+\end{frame}
+
+\begin{frame}[fragile]
     \frametitle{Gabriel's Horn}
     \framesubtitle{Writing \LaTeX}
 
     \begin{minted}{Latex}
         \begin{displaymath}
-            \int_{1}^{\infty} \frac{\pi{}dy}{y^2}
+            \int_{1}^{\infty} \frac{\pi}{y^2}dy
         \end{displaymath}
     \end{minted}
 
@@ -354,21 +369,6 @@
 
     \[\neg (P \wedge Q) = (\neg P) \vee (\neg Q)\]
     \[\neg (P \vee Q) = (\neg P) \wedge (\neg Q)\]
-\end{frame}
-
-\begin{frame}[fragile]
-    You can also embed math in text\ldots
-
-    \bigskip
-
-    \begin{minted}{Latex}
-        Let \(x=1\) and \(y=2\). As \(t \to \infty\),
-        \(z\) goes to \(0\).
-    \end{minted}
-
-    \bigskip
-
-    Let \(x=1\) and \(y=2\). As \(t \to \infty\), \(z\) goes to \(0\).
 \end{frame}
 
 \begin{frame}[fragile]
